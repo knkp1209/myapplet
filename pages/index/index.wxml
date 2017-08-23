@@ -1,5 +1,23 @@
 <!--index.wxml-->
-<!-- <view class="container">
+<view class="container">
+ <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{sg}}" wx:key>
+    <swiper-item>
+      <image src="{{item.ad_image}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper> 
+
+<scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+    <block wx:for="{{categories.data}}" wx:key="*this">
+      <navigator class="category" url="/pages/category/category?id={{item.cat_id}}">
+        <image class="icon" src="{{item.logo}}" />
+        <text class="name">{{item.cat_name}}</text>
+      </navigator>
+    </block>
+</scroll-view>
+<!--
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -9,5 +27,5 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
-  </view>
-</view> -->
+  </view>-->
+</view> 
